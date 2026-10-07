@@ -63,6 +63,10 @@ body{font-family:Inter,sans-serif;background:#05060d;color:#e8eaf4;overflow-x:hi
 .stat>div{border-radius:23px;background:#0b0e1c;padding:28px;height:100%}
 .stat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:clamp(44px,9vw,60px);line-height:1;transition:transform .3s}
 .stat:hover b{transform:scale(1.04)}
+.cta-wa{background:linear-gradient(90deg,#16a34a,#25d366);color:#04120a}
+.cta-wa:hover{box-shadow:0 10px 30px rgba(37,211,102,.45)}
+.cta-wa:before{animation:ringg 2.2s infinite}
+@keyframes ringg{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}100%{box-shadow:0 0 0 22px rgba(37,211,102,0)}}
 </style>
 </head>
 <body>
@@ -92,11 +96,11 @@ body{font-family:Inter,sans-serif;background:#05060d;color:#e8eaf4;overflow-x:hi
 
 <main class="relative z-10">
 <section class="max-w-4xl mx-auto px-5 pt-10 pb-20 text-center">
-  <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5 backdrop-blur text-center"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>Entregas de 24 a 48 horas</span>
+  <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5 backdrop-blur text-center"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>+2,250 clientes atendidos · Entregas de 24 a 48 horas</span>
   <h1 class="f-d font-bold leading-[1.04] tracking-tight mt-6 text-[clamp(34px,7vw,70px)]">Haz que tu marca destaque, venda y sea <span class="grad">imposible de ignorar.</span></h1>
   <p class="mt-6 text-xl sm:text-2xl text-slate-300 f-d min-h-[2em] sm:min-h-0"><span id="tw" class="caret text-cyan-300 pr-1"></span></p>
   <p class="max-w-2xl mx-auto mt-4 text-slate-400 text-lg">Transformamos ideas en marcas que destacan. Diseño profesional, tecnología e IA para llevar tu negocio al siguiente nivel.</p>
-  <button onclick="enviarWhatsApp('Cotización general','Hola, quiero cotizar mi proyecto')" class="cta mt-8 px-8 sm:px-9 py-4 text-lg inline-flex items-center gap-3 overflow-hidden"><svg class="i f text-2xl relative z-10"><use href="#wa"/></svg><span class="relative z-10">Cotizar mi proyecto por WhatsApp</span></button>
+  <button onclick="enviarWhatsApp('Cotización general','Hola, quiero cotizar mi proyecto')" class="cta cta-wa mt-8 px-8 sm:px-9 py-4 text-lg inline-flex items-center gap-3 overflow-hidden"><svg class="i f text-2xl relative z-10"><use href="#wa"/></svg><span class="relative z-10">Cotizar mi proyecto por WhatsApp</span></button>
   <div class="mt-10 grid sm:grid-cols-3 gap-3 text-sm text-slate-300">
     <div class="rounded-2xl bg-white/5 border border-white/10 py-3 px-4 flex items-center justify-center gap-2"><svg class="i text-violet-400 text-lg"><use href="#tgt"/></svg>Propuestas a tu medida</div>
     <div class="rounded-2xl bg-white/5 border border-white/10 py-3 px-4 flex items-center justify-center gap-2"><svg class="i text-cyan-400 text-lg"><use href="#chat"/></svg>Asesoría personalizada</div>
