@@ -96,7 +96,7 @@ body{font-family:Inter,sans-serif;background:#05060d;color:#e8eaf4;overflow-x:hi
 
 <main class="relative z-10">
 <section class="max-w-4xl mx-auto px-5 pt-10 pb-20 text-center">
-  <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5 backdrop-blur text-center"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>Entregas de 24 a 48 horas</span>
+  <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm border border-white/10 bg-white/5 backdrop-blur text-center"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>Entregas Express · Entregas en 24 a 48 horas</span>
   <h1 class="f-d font-bold leading-[1.04] tracking-tight mt-6 text-[clamp(34px,7vw,70px)]">Haz que tu marca destaque, venda y sea <span class="grad">imposible de ignorar.</span></h1>
   <p class="mt-6 text-xl sm:text-2xl text-slate-300 f-d min-h-[2em] sm:min-h-0"><span id="tw" class="caret text-cyan-300 pr-1"></span></p>
   <p class="max-w-2xl mx-auto mt-4 text-slate-400 text-lg">Transformamos ideas en marcas que destacan. Diseño profesional, tecnología e IA para llevar tu negocio al siguiente nivel.</p>
@@ -131,7 +131,7 @@ body{font-family:Inter,sans-serif;background:#05060d;color:#e8eaf4;overflow-x:hi
 <section class="max-w-3xl mx-auto px-5 py-20 text-center rv">
   <h2 class="f-d font-bold text-4xl sm:text-5xl">Tu negocio ya creció. Haz que tu imagen <span class="grad">esté a la altura.</span></h2>
   <p class="text-slate-400 mt-4 text-lg">Cuéntanos tu idea y te respondemos con una propuesta clara de precio y plazo.</p>
-  <button onclick="enviarWhatsApp('Cierre','Hola, quiero cotizar un proyecto')" class="cta mt-8 px-9 py-4 text-lg inline-flex items-center gap-3 overflow-hidden"><svg class="i f text-2xl relative z-10"><use href="#wa"/></svg><span class="relative z-10">Hablar por WhatsApp</span></button>
+  <button onclick="enviarWhatsApp('Cierre','Hola, quiero cotizar un proyecto')" class="cta cta-wa mt-8 px-9 py-4 text-lg inline-flex items-center gap-3 overflow-hidden"><svg class="i f text-2xl relative z-10"><use href="#wa"/></svg><span class="relative z-10">Hablar por WhatsApp</span></button>
 </section>
 </main>
 
@@ -147,10 +147,11 @@ body{font-family:Inter,sans-serif;background:#05060d;color:#e8eaf4;overflow-x:hi
 <div id="md" style="display:none" class="fixed inset-0 z-50 bg-black/90 place-items-center p-4"><button id="mc" class="absolute top-4 right-4 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm font-semibold">Cerrar</button><video id="mv" controls playsinline class="max-h-[86vh] max-w-full rounded-2xl"></video></div>
 <script>
 const WA_NUMBER = "51950733854";
+const MARCA_WEB = "\u26A1\uFE0F"; // ⚡ escrito como código para que no se dañe por la codificación del archivo // icono que identifica los mensajes que vienen de la landing
 function enviarWhatsApp(servicio, mensaje){
   try{ if(window.fbq) fbq('track','Contact',{content_name:servicio}); }catch(e){}
   try{ if(window.ttq) ttq.track('Contact',{content_name:servicio}); }catch(e){}
-  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(mensaje),'_blank','noopener');
+  window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(MARCA_WEB+' '+mensaje),'_blank','noopener');
 }
 const IMG=(f,alt)=>`<img class="art" src="assets/${f}.webp" alt="${alt}" width="1280" height="720" loading="lazy" decoding="async">`;
 const VID=f=>`<video class="art" src="assets/${f}.mp4" poster="assets/${f}.webp" muted loop playsinline preload="none" data-vid></video>`;
@@ -171,7 +172,7 @@ const S=[
 const g=document.getElementById('grid');
 S.forEach(s=>{
   const el=document.createElement('div');el.className='card rv '+s.w;
-  el.innerHTML=`<div class="in"><div class="flex items-center justify-between gap-2 mb-4"><div class="ico text-cyan-300"><svg class="i"><use href="#${s.i}"/></svg></div><span class="text-xs font-semibold px-3 py-1 rounded-full bg-violet-500/15 text-violet-300 border border-violet-400/20 text-right">${s.b}</span></div><div class="media${s.tall?' v':''}" ${s.v?`data-src="assets/${s.v}.mp4" role="button" tabindex="0" aria-label="Ver video con sonido" style="cursor:pointer;--bg:url(assets/${s.v}.webp)"`:''}>${MEDIA[s.a]}${s.promo?'<span class="promo">OFERTA · SOLO POR ESTOS DÍAS</span>':''}<span class="cap">${s.v?'Toca para ver con sonido':'Ejemplo de diseño'}</span></div><h3 class="f-d font-bold text-2xl mb-2">${s.t}</h3><p class="text-slate-400 mb-6 flex-1">${s.d}</p><button class="w-full py-3 rounded-xl font-semibold border border-white/15 hover:border-transparent hover:bg-gradient-to-r hover:from-violet-500 hover:to-cyan-400 hover:text-black transition inline-flex items-center justify-center gap-2"><svg class="i f"><use href="#wa"/></svg>Cotizar este servicio</button></div>`;
+  el.innerHTML=`<div class="in"><div class="flex items-center justify-between gap-2 mb-4"><div class="ico text-cyan-300"><svg class="i"><use href="#${s.i}"/></svg></div><span class="text-xs font-semibold px-3 py-1 rounded-full bg-violet-500/15 text-violet-300 border border-violet-400/20 text-right">${s.b}</span></div><div class="media${s.tall?' v':''}" ${s.v?`data-src="assets/${s.v}.mp4" role="button" tabindex="0" aria-label="Ver video con sonido" style="cursor:pointer;--bg:url(assets/${s.v}.webp)"`:''}>${MEDIA[s.a]}${s.promo?'<span class="promo">OFERTA · SOLO POR ESTOS DÍAS</span>':''}<span class="cap">${s.v?'Toca para ver con sonido':'Ejemplo de diseño'}</span></div><h3 class="f-d font-bold text-2xl mb-2">${s.t}</h3><p class="text-slate-400 mb-6 flex-1">${s.d}</p><button class="cta cta-wa w-full py-3 inline-flex items-center justify-center gap-2 overflow-hidden"><svg class="i f relative z-10"><use href="#wa"/></svg><span class="relative z-10">Cotizar este servicio</span></button></div>`;
   el.querySelector('button').onclick=()=>enviarWhatsApp(s.t,s.m);
   el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),n=el.querySelector('.in');n.style.setProperty('--mx',(e.clientX-r.left)+'px');n.style.setProperty('--my',(e.clientY-r.top)+'px')});
   g.appendChild(el);
